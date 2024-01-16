@@ -4,7 +4,7 @@ public class ruotaVenezia {
     //stampare 5 numeri casuali che hanno un valore
     //fare un metodo che si chiama ruota estratta e ci fà ritornare un array con un valore casuale
     public static void main(String[] args) {
-        int ruota = 0;
+        int ruota;
         Scanner keyboard = new Scanner(System.in);
         System.out.println("scegli la ruota che può andare da 1 a 11");
         ruota = keyboard.nextInt();
@@ -36,7 +36,7 @@ public class ruotaVenezia {
     }
 
     public static int[] array() {
-        int valore = 0;
+        int valore;
         int[] numeriUsciti = new int[6];//creazione dell'array
         for (int i = 0; i < 6; i++)
         {//un for che applica il valore random ad una cella dell'array
