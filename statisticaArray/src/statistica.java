@@ -3,31 +3,25 @@ import java.util.Random;
 public class statistica {
     public static void main(String[] args)
     {
-        int [] frequenze  = new int[6];   //Il vettore è una collezione di dati dello stesso tipo.
-        int valore=0;
+        int [] frequenze  = new int[6]; //creazione dell'array 
+        int valore=0;//si inizializza a 0
         for( int i=0; i<2; i++) {
             valore = valoreRandom(0, 6);
             System.out.println(frequenze[1]);
-            // System.out.printf("Valore %d \n ",valore);  //%d vuoldire variabile di tipo intero.
-            //%f vuoldire float
-            // %s vuoldire stringa
-            // %c vuoldire char (carattere)
-            // Printf serve per formattare il testo.
             FacceDado(valore);
-            frequenze[valore-1]=+1;
+            frequenze[valore-1]=+1;// fà aumentare di 1 la cella 
+            // la frequenza serve per mostrare quante volte è uscita quella cella
             for(int index=0; index<frequenze.length; index++)
             {
-                System.out.println("Faccia"+(index+1)+"="+frequenze[index]);
+                System.out.println("Faccia"+(index+1)+"="+frequenze[index]);// serve per stampare 6 volte la stessa cosa
             }
         }
-          /* System.out.printf(" Faccia1: %d,Faccia2: %d,Faccia3: %d,Faccia4: %d,Faccia5: %d,Faccia6: %d ",faccia1,faccia2,faccia3,
-                    faccia4,faccia5,faccia6);*/
     }
 
-    private static int valoreRandom(int minValue, int maxValue)
+    private static int valoreRandom(int minValue, int maxValue)//metodo che serve per creare il valore random
     {
-        Random casuale = new Random(); //Metodo che non ha nessun parametro, si chiama costruttore
-        return  casuale.nextInt(minValue,maxValue)+1;
+        Random casuale = new Random();//crea il valore random
+        return  casuale.nextInt(minValue,maxValue)+1; // si fà il return fi casuale(il valore random) che è compreso tra minValue e MaxValue
     }
     private static void FacceDado(int valoreFaccia1)
     {
