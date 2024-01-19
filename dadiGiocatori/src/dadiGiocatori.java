@@ -8,11 +8,11 @@ public class dadiGiocatori {
         int valoreMenu;
         String risposta;
         String menu;
-        String[] nome = new String[2];
+        String[] nome = new String[2];//menu di stringhe
         boolean mentre=true;
         Scanner keyboard = new Scanner(System.in);
         do {
-            ClrScr();
+            ClrScr();//serve per pulire il menù
             System.out.println("=== APP Gara Dadi ===\n" +
                     "[1]-Sfida tra due giocatori\n" +
                     "[2]-Sfida contro il computer\n" +
@@ -26,7 +26,7 @@ public class dadiGiocatori {
                     System.out.println("inserisci il nome del giocatore numero 2");
                     nome[1]= keyboard.next().toLowerCase();
                     int[] numeriUsciti = array();
-                    for (int giocatore = 0; giocatore < numeriUsciti.length; giocatore++) {
+                    for (int giocatore = 0; giocatore < numeriUsciti.length; giocatore++) {//mostra in output tutti
                         System.out.println("il valore uscito al giocatore " + nome[giocatore] + " è " + numeriUsciti[giocatore]);//mostra in output i valori dell'array
                     }
                     if (numeriUsciti[1]<numeriUsciti[0]){
@@ -41,12 +41,12 @@ public class dadiGiocatori {
                     System.out.println("\n" +
                             "premi invio per far vedere il menù");
                     keyboard.nextLine();
-                    menu=keyboard.nextLine();
+                    menu=keyboard.nextLine();//se si preme invio si esce dallo switch case e si calcella tutto il terminale
                     break;
                 }
                 case 2:{
                     int[] numeriUsciti = array();
-                    for (int giocatore1 = 0; giocatore1 < numeriUsciti.length; giocatore1++) {
+                    for (int giocatore1 = 0; giocatore1 < numeriUsciti.length; giocatore1++){//mostra in output tutti
                         System.out.println("il valore uscito al computer numero " + (giocatore1+1) + " è " + numeriUsciti[giocatore1]);//mostra in output i valori dell'array
                     }
                     if (numeriUsciti[1]<numeriUsciti[0]){
@@ -61,7 +61,7 @@ public class dadiGiocatori {
                     System.out.println("\n" +
                             "premi invio per far vedere il menù");
                     keyboard.nextLine();
-                    menu=keyboard.nextLine();
+                    menu=keyboard.nextLine();//se si preme invio si esce dallo switch case e si calcella tutto il terminale
                     break;
                 }
                 case 3: {
