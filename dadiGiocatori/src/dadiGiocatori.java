@@ -6,6 +6,7 @@ public class dadiGiocatori {
     public static void main(String[] args) {
         int ruota;
         int valoreMenu;
+        int faccia;
         String risposta;
         String menu;
         String[] nome = new String[2];//menu di stringhe
@@ -28,6 +29,8 @@ public class dadiGiocatori {
                     int[] numeriUsciti = array();
                     for (int giocatore = 0; giocatore < numeriUsciti.length; giocatore++) {//mostra in output tutti
                         System.out.println("il valore uscito al giocatore " + nome[giocatore] + " è " + numeriUsciti[giocatore]);//mostra in output i valori dell'array
+                        faccia=numeriUsciti[giocatore];
+                        FacceDado(faccia);
                     }
                     if (numeriUsciti[1]<numeriUsciti[0]){
                         System.out.println("il vincitore è "+ nome[0]);
@@ -47,7 +50,10 @@ public class dadiGiocatori {
                 case 2:{
                     int[] numeriUsciti = array();
                     for (int giocatore1 = 0; giocatore1 < numeriUsciti.length; giocatore1++){//mostra in output tutti
+
                         System.out.println("il valore uscito al computer numero " + (giocatore1+1) + " è " + numeriUsciti[giocatore1]);//mostra in output i valori dell'array
+                        faccia=numeriUsciti[giocatore1];
+                       FacceDado(faccia);
                     }
                     if (numeriUsciti[1]<numeriUsciti[0]){
                         System.out.println("il vincitore è il computer numero 1");
@@ -99,6 +105,70 @@ public class dadiGiocatori {
 
         }
         return numeriUsciti;
+    }
+    private static void FacceDado(int faccia) {
+        //ALT + 201 ╔
+        //ALT + 188 ╝
+        //ALT + 187 ╗
+        //ALT + 200 ╚
+        //ALT + 205 ═
+        //ALT + 186 ║
+
+        switch (faccia) {
+            case 1 : {
+                System.out.println("\t\t\t\t ╔═════════╗");
+                System.out.println("\t\t\t\t ║         ║");
+                System.out.println("\t\t\t\t ║    O    ║");
+                System.out.println("\t\t\t\t ║         ║");
+                System.out.println("\t\t\t\t ╚═════════╝");
+                break;
+            }
+
+            case 2 : {
+                System.out.println("\t\t\t\t ╔═════════╗");
+                System.out.println("\t\t\t\t ║  O      ║");
+                System.out.println("\t\t\t\t ║         ║");
+                System.out.println("\t\t\t\t ║      O  ║");
+                System.out.println("\t\t\t\t ╚═════════╝");
+                break;
+            }
+
+            case 3 : {
+                System.out.println("\t\t\t\t ╔═════════╗");
+                System.out.println("\t\t\t\t ║  O      ║");
+                System.out.println("\t\t\t\t ║    O    ║");
+                System.out.println("\t\t\t\t ║      O  ║");
+                System.out.println("\t\t\t\t ╚═════════╝");
+                break;
+            }
+
+            case 4 : {
+                System.out.println("\t\t\t\t ╔═════════╗");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ║         ║");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ╚═════════╝");
+                break;
+            }
+
+            case 5 : {
+                System.out.println("\t\t\t\t ╔═════════╗");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ║    O    ║");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ╚═════════╝");
+                break;
+            }
+
+            case 6 : {
+                System.out.println("\t\t\t\t ╔═════════╗");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ║  O   O  ║");
+                System.out.println("\t\t\t\t ╚═════════╝");
+                break;
+            }
+        }
     }
     private static void ClrScr(){
         try {
