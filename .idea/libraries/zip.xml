@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="zip">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/zip/Applotto.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/morraCinese.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/GiorniOreMinuti.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/boolChar.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/dadiMenu.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/generaRuotaVeneziaGiocatori.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/dado.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/Menu.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/OrologioDigitale-20231218T070735Z-001.zip!/" />
+      <root url="jar://$PROJECT_DIR$/zip/estrazioneLotto.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
