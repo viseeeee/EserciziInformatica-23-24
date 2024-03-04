@@ -9,7 +9,9 @@ public class appLotto {
             ClrScr();
             menu();
             Scanner keyboard = new Scanner(System.in);
-            scelta = keyboard.nextInt();// si mette in inpu la scelta del menù
+
+            // si mette in inpu la scelta del menù
+            scelta = keyboard.nextInt();
 
             // controllo della scelta fatta precedentemente se la scelta non è 1,2,3 e ti fà reinserire la scelta
             while (scelta!=1 && scelta!=2 && scelta!=3){
@@ -18,10 +20,12 @@ public class appLotto {
                 menu();
             scelta=keyboard.nextInt();
             }
+            
             //switch case della scelta
             switch (scelta) {
                 case 1: {
-                    valori=estrazione();//return dell'array
+                    //fà l'estrazione dei numeri inserendo dei numeri casuali
+                    valori=estrazione();
                     System.out.println("l'estrazione dei numeri è finita");
                     Wait();
                     break;
@@ -42,6 +46,8 @@ public class appLotto {
             }
         } while (cambio == true);
     }
+
+    //metodo che mostra il menu
     private static void menu() {
         System.out.println("== App lotto\n");
         System.out.println("[1] estrazione ruota di venezia");
