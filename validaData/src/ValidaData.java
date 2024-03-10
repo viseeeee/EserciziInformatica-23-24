@@ -5,28 +5,33 @@ public class ValidaData {
         //declaration and initialization of variables/arrays
 
         int numero = 0;
+        int output = 0;
+        boolean domain=false;
         Scanner scanner = new Scanner(System.in);
-        boolean continua = true;
-        char scelta;
-
-        boolean dataNonValida = false;
+        //output for enter the date
+        System.out.println("Inserisci un numero intero nel formato ggmmaaaa per determinare la data: ");
+        //Check for non valido user input
+        try{
+            numero=scanner.nextInt();
+        }catch (Exception x){
+            domain=true;
+            scanner.next();
+        }
+        output=validata(numero,domain);
         do{
-            //output for enter the date
-            System.out.println("Inserisci un numero intero nel formato ggmmaaaa per determinare la data: ");
-            //Check for non valid user input
-            try {
-                //insertion of the date
-                numero = scanner.nextInt();
-            } catch(Exception x) {
+            domain=false;
+            if(output!=-1 && output!=0){
                 System.out.println("Errore : il valore inserito non e' valido");
-                dataNonValida = true;
-                scanner.nextLine();
+                System.out.println("reinserisci il valore");
+                try{
+                    numero=scanner.nextInt();
+                }catch (Exception x){
+                    domain=true;
+                    scanner.next();
+                }
+                output=validata(numero,domain);
             }
-
-            dataNonValida = validata(numero);
-            if(dataNonValida)
-                System.out.println("DATA ERRATA");
-        } while(dataNonValida);
+        } while(output!=-1 && output!=0);
 
         //Separare la data in giorno, mese, anno
         int[] dataSeparata = separazioneData(numero);
@@ -101,15 +106,14 @@ public class ValidaData {
     //1 : Out of range
     //2 : Domain incorrect
 
-    private static int validata(numero){
-        try{
-            
-        }catch(Exception x){
-            return 2 
+    private static int validata (int numero,boolean domain){
+       if(domain){
+            return 2;
         }
-        if(numero>31129999 || numero<01010001){
+        if(numero>31129999 || numero<  1010001){
             return 1;
         }
-        return -1;
+            return -1;
+
     }
 }
