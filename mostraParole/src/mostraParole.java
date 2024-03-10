@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.util.Scanner;
+//mette dentro un array le parole di una frase
 public class mostraParole {
     public static void main(String[] args) {
         int[] lunghezza;
