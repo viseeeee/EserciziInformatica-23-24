@@ -106,6 +106,7 @@ public class ValidaData {
     //1 : Out of range
     //2 : Domain incorrect
 
+    //metodo che indica se la data inserita ha il domio incorretto, è out of range o non ha nulla
     private static int validata (int numero,boolean domain){
        if(domain){
             return 2;
