@@ -4,7 +4,11 @@ public class boolChar {
         Scanner keyboard = new Scanner(System.in);
         int numeroInserimento;//indica i numeri che si vogliono inserire
         int j;//si usa in un for
+
+        //array con 26 caratteri booleani
         boolean[] valori = new boolean[26];
+
+        //array con 26 caratteri di stringhe
         String[] inserire = new String[26];
         //array con tutti i caratteri dell'alfabeto
         String[] alfabeto = {"a", "b", "c", "d", "e", "f", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
