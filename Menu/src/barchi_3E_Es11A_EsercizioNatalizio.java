@@ -28,7 +28,8 @@ public class barchi_3E_Es11A_EsercizioNatalizio {
                 while (other.equals("sì")) {
                     uovaNat++;
                     incasso = incasso + 1.5; // supponiamo un costo di 1.5 euro per uovo
-                    System.out.println("Vuoi cuocere un'altra uova? (sì/no)");
+                    //inserimento se lo vuole cuocere o no
+                    System.out.println("Vuoi cuocere un'altra uova? (sì/no)"); 
                     other = kb.next();
                 }
                 System.out.println("Hai cotto " + uovaNat + " uova di Natale.");
@@ -36,6 +37,7 @@ public class barchi_3E_Es11A_EsercizioNatalizio {
                 pFinal = pFinal + costoUova;
                 break;
                 case 2:
+                //scelta 
                     System.out.println("Cosa vuoi?\n"+
                             "1.hamburgher di renna\n"+
                             "2.vegani\n"+
