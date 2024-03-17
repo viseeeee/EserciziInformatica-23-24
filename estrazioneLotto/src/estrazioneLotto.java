@@ -10,11 +10,13 @@ public class estrazioneLotto {
         String invio;
         int valoreMenu=0;
         int l;
+        //serve per il metodo del menu
+        //con tutte le scelte
         String [] opzioni = {"=== Gioco Dadi === ", "[1] estrazioni ruota di venezia", "[2] giocata utente","[3] verifica vincita","[4] visualizza giocate", "[5] Exit "};
         do {
             valoreMenu=Menu(opzioni, keyboard);
         switch (valoreMenu){
-            case 1:{
+            case 1:{//estrazione delle ruota di venezia tra 0 e 90
                 for (int i=0;i<estrazioneRuota.length;i++){
                     estrazioneRuota[i]=random(0,90);
                 }
@@ -24,7 +26,7 @@ public class estrazioneLotto {
                 invio= keyboard.nextLine();
                 break;
             }
-            case 2:{
+            case 2:{//giocata dell'utente 
                 for (int j=0;j< valoriUtente.length;j++){
                     System.out.println("inserisci il valore numero "+(j+1)+",deve essere compreso tra 0 e 90");
                     valoriUtente[j]= keyboard.nextInt();
@@ -34,7 +36,7 @@ public class estrazioneLotto {
                 invio= keyboard.nextLine();
                 break;
             }
-            case 3:{
+            case 3:{//verifica tra la giocata dell'utente e l'estrazioen della ruota
                 for (int cella=0;cella< estrazioneRuota.length;cella++){
                     for (int cella1=cella+1;cella1< estrazioneRuota.length;cella1++){
                         if (estrazioneRuota[cella1]==estrazioneRuota[cella]){
@@ -52,7 +54,7 @@ public class estrazioneLotto {
                     }
                     l=0;
                 }
-                //
+                //out della quantità di numeri che sono stati azzeccati
                 if (contatoreVincita==0){
                     System.out.println("non hai azzeccato nemmeno un numero");
                 } if (contatoreVincita==1) {
@@ -109,10 +111,14 @@ public class estrazioneLotto {
 
         return valoreMenu;
     }
+
+    //metodo random
     private static int random( int minValue,int maxValue){
         Random casuale=new Random();
         return casuale.nextInt(minValue,maxValue);
     }
+
+    //metodo che serve per pulire il terminale
     private static void ClrScr(){
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
