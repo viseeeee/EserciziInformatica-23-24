@@ -8,8 +8,10 @@ public class NumeriPari {
         int Numero=0, pari=0;
         int resto;
        do {
+           //inserimento dei numeri
            System.out.println("inserisci il numero");
            NumeriInseriti= keyboard.nextInt();
+           //calcolo del resto per contare se sono pari o no
            resto=NumeriInseriti%2;
            Numero++;
             if (resto==0){
@@ -32,7 +34,9 @@ public class NumeriPari {
 
             }
         } while (pari<5);
+        //conteggio dei numeri che sono stati inseriti
         System.out.println("sono stai inseriti: "+ Numero);
+        //out dei numeri pari che sono stati inseriti 
         System.out.println("i numeri sono:"+ Numero1 +","+Numero2 +","+Numero3 +","+Numero4 +","+Numero5 +",");
 
     }
