@@ -33,6 +33,7 @@ public class statistica {
         //ALT + 186 ║
 
         switch (valoreFaccia1) {
+                //dado che vale 1 
             case 1 : {
                 System.out.println("\t\t\t\t ╔═════════╗");
                 System.out.println("\t\t\t\t ║         ║");
@@ -42,7 +43,7 @@ public class statistica {
 
                 break;
             }
-
+           //dado che vale 2
             case 2 : {
                 System.out.println("\t\t\t\t ╔═════════╗");
                 System.out.println("\t\t\t\t ║  O      ║");
@@ -52,7 +53,7 @@ public class statistica {
 
                 break;
             }
-
+        //dado che vale 3
             case 3 : {
                 System.out.println("\t\t\t\t ╔═════════╗");
                 System.out.println("\t\t\t\t ║  O      ║");
@@ -61,7 +62,7 @@ public class statistica {
                 System.out.println("\t\t\t\t ╚═════════╝");
                 break;
             }
-
+            //dado che vale 4
             case 4 : {
                 System.out.println("\t\t\t\t ╔═════════╗");
                 System.out.println("\t\t\t\t ║  O   O  ║");
@@ -70,7 +71,7 @@ public class statistica {
                 System.out.println("\t\t\t\t ╚═════════╝");
                 break;
             }
-
+        //dado che vale 5
             case 5 : {
                 System.out.println("\t\t\t\t ╔═════════╗");
                 System.out.println("\t\t\t\t ║  O   O  ║");
@@ -79,7 +80,7 @@ public class statistica {
                 System.out.println("\t\t\t\t ╚═════════╝");
                 break;
             }
-
+            //dado che vale 6
             case 6 : {
                 System.out.println("\t\t\t\t ╔═════════╗");
                 System.out.println("\t\t\t\t ║  O   O  ║");
