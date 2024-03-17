@@ -43,6 +43,8 @@ public class dado {
         }
 
     }
+
+    //visualizzazione del risultato uscito
     private static void faceDado(int ValoreFaccia){
         switch ( ValoreFaccia) {
             case 1:{
@@ -93,7 +95,7 @@ public class dado {
 
     }
 
-
+    //metodo del temp
     private static void Wait() {
         try {
             Thread.sleep(500);//sono millisecondi
@@ -102,6 +104,7 @@ public class dado {
         }
     }
 
+    //metodo che sreve pe pulire il terminale
     private static void ClrScr() {
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
