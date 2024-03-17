@@ -8,6 +8,7 @@ public class GiorniOreMInuti {
         Scanner keyboard = new Scanner(System.in);
         int input;
         int ore, minuti, giorni,secondi;
+        //indiserimento dei secondi da convertire
         System.out.println("inserisci il numero dei secondi da convertire a giorni,ore,minuti e secondi");
         input= keyboard.nextInt();
             secondi=input;
