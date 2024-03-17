@@ -70,6 +70,7 @@ public class dadiGiocatori {
                     menu=keyboard.nextLine();//se si preme invio si esce dallo switch case e si calcella tutto il terminale
                     break;
                 }
+                    //se sceglie 3 esce dal ciclo
                 case 3: {
                     break;
                 }
