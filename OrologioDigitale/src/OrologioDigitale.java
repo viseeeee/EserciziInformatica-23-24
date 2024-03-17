@@ -4,6 +4,7 @@ public class OrologioDigitale {
         Scanner keyboard = new Scanner(System.in);
         int ore = 0, minuti = 0, secondi = 0, centesimi=0;
         int avvio;
+        //inserimento di 0 per far avviare il programma
         System.out.println("inserisci 0 per far avviare il programma");
         avvio = keyboard.nextInt();
 
@@ -23,11 +24,14 @@ public class OrologioDigitale {
                 minuti = minuti - 60;
                 ore = ore + 1;
             }
+            //out delle ore, minuti,secondi,centesimi
             System.out.println("----------------------------------------------------------------------------------------------");
             System.out.println(" ore: " + ore + " minuti: " + minuti + " secondi: " + secondi + " centesimi: " + centesimi);        //output
             System.out.println("-----------------------------------------------------------------------------------------------");
         }
     }
+
+    //metodo per aspettare
     private static void Wait() {
         try {
             Thread.sleep(10);
@@ -35,6 +39,8 @@ public class OrologioDigitale {
             e.printStackTrace();
         }
     }
+
+    //metodo per pulire il terminale
     private static void ClrScr() {
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
