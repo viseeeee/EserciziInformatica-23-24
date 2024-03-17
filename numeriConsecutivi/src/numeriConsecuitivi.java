@@ -9,9 +9,13 @@ public class numeriConsecuitivi {
         int volte = 0, consecutivi = 0;
         int primoNumero = 0;
         int[] numeri = new int[10];
+
+        //inserimento di tre numeri casuali compresi tra 1 e 5
         for (int j = 0; j < numeri.length; j++) {
             numeri[j]=random(minValue,maxValue);
         }
+
+        //controllo se i numeri sono consecutivi
         for (int l=0;l<numeri.length;l++){
             volte++;
             if (consecutivi==0) {
@@ -23,11 +27,12 @@ public class numeriConsecuitivi {
                     consecutivi++;
                     numeroPrec= numeri[l];
                 }
-
+            //se 3 numeri non sono consecutivi si riinizia tutto in controllo precedente
             if (volte== 3) {
                 volte=0;
                 l=l-2;
 
+                //stampa dei numeri consecutivi
                 if (consecutivi == 3) {
                     consecutivi=0;
                     for (k =primoNumero; k < primoNumero+3; k++) {
@@ -35,6 +40,8 @@ public class numeriConsecuitivi {
                         System.out.println(numeri[k]);
                     }
                 }
+
+                //out Questi tre numeri non sono cosecutivi se quei 3 numeri non sono consecutivi
                 if (consecutivi<3) {
                     consecutivi=0;
                     System.out.println("Questi tre numeri non sono cosecutivi");
@@ -44,6 +51,8 @@ public class numeriConsecuitivi {
 
         }
         }
+
+    //metodo del random
     private static int random( int minValue,int maxValue){
         Random casuale=new Random();
         return casuale.nextInt(minValue,maxValue);
