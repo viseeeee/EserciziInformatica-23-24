@@ -65,6 +65,8 @@ public class ValidaData {
     //1204 / 100 = 12 Resto 04
     //1204 / 100 = 12 Salviamo il risultato dentro data
 
+    
+ //metodo che serve per aumentare di 1 giorno la data
     private static int[] data_down(int giorno, int mese, int anno){
         int[] dataCambiata=new int[3];
         switch (giorno){
@@ -103,6 +105,7 @@ public class ValidaData {
     }
 
 
+    //metodo che serve per diminuire di 1 giorno la data
     private static int[] data_up(int giorno, int mese, int anno) {
         int[] dataCambiata = new int[3];
         switch (giorno) {
