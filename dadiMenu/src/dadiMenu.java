@@ -10,6 +10,7 @@ public class dadiMenu {
         Scanner keyboard = new Scanner(System.in);
         String[] opzioni = {"=== Gioco Dadi === ", "[1]-Sfida tra due giocatori", "[2] Sfida contro il computer", "[3] Exit "};
         do {
+            //invoco il metodo menu
             valoreMenu = Menu(opzioni, keyboard);
             switch (valoreMenu) {
                 case 1: {
