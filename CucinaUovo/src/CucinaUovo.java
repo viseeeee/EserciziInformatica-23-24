@@ -3,6 +3,7 @@ public class CucinaUovo {
         for (int i = 0; i <= 60;i++) {
             if (i == 60) {
                 ClrScr();
+                //indica che i 3 minuti sono finiti
                 System.out.println("sono passati 3 minuti quindi l'uovo è pronto");
                 System.out.println("\n"+
                         "####################################################################################################\n" +
@@ -63,7 +64,7 @@ public class CucinaUovo {
                         "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%@@@@@@@@@@@@@@\n" );
             }
             if (i!=60) {
-
+                //mostra nel terminale queste immagini in loop
                 System.out.print("                 \n" +
                         "  .           .                 .      .             .                                             .\n" +
                         "      . .         .     .                    ..........     .   .. .             .                 .\n" +
@@ -171,8 +172,10 @@ public class CucinaUovo {
                         "....................:::::::::::::::::::::::::::::::::::::------------------::::.....................\n" +
                         ".....................:::::::::::::::::::::::::::::::::::::::::::::::::::::::::......................\n" );
                 if (i == 20) {
+                    //serve per indicare che è passato un minuto
                     System.out.println("è passato un minuto");
                 }
+                //serve per indicare che sono passati 2 minuti
                 if (i == 40) {
                     System.out.println("sono passati 2 minuti");
                 }
@@ -183,6 +186,7 @@ public class CucinaUovo {
         }
     }
 
+    //metodo che blocca il tempo
     private static void Wait() {
         try {
             Thread.sleep(1000);//sono millisecondi
@@ -191,6 +195,7 @@ public class CucinaUovo {
         }
     }
 
+    //metodo che serve per pulire il terminale
     private static void ClrScr() {
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
