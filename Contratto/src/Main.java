@@ -1,6 +1,10 @@
+import javax.naming.ldap.Control;
+
 import static tools.utility.*;
 
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentMap;
+
 public class Main {
     public static void main(String[] args) {
         String[] operazioni = {"VODAFONE",
@@ -11,7 +15,8 @@ public class Main {
                 "[5] Cambio contratto",
                 "[6] Eliminazione del contatto tramite nome e cognome",
                 "[7] Eliminazione del contatto tramite numero",
-                "[8] Fine"};
+                "[8] Ordinamento",
+                "[9] Esci"};
        boolean Sitel=true;
         String[] tipoC = {"Telefono","1]abitazione", "2]cellulare", "3]aziendale"};
        int posizione=0;
@@ -119,12 +124,21 @@ public class Main {
                     }
                     break;
                 }
+                case 8:{
+                    gestore=Cambio(gestore,contrattiVenduti,Compare(gestore,contrattiVenduti));
+                    System.out.println("L'operazione di ordinamento è finito");
+                    System.out.println(gestore[0].cognome);
+                    System.out.println(gestore[1].cognome);
+                    break;
+                }
+
                 default:
                     fine = false;
                     break;
             }
         } while (fine);
     }
+
     private static Contatto leggiPersona(boolean Sitel, Scanner keyboard) {
         //Sitel è true quando dobbiamo leggere
         String[] tipoC = {"Telefono","1]abitazione", "2]cellulare", "3]aziendale"};
@@ -177,12 +191,18 @@ public class Main {
         return -1;
     }
 
-    //elimina la posizione dell'array
+
+    private static int[] CambioNumero(int[] ordinato, int contrattiVenduti,int posizione){
+                ordinato[posizione]=-35;
+
+        return ordinato;
+    }
+
+    //mette un numero ad una posizione dell'array
     private static Contatto[] PosizioneEliminata(Contatto[] gestore, int contrattiVenduti,int posizione){
         for (int i=posizione;i<contrattiVenduti;i++){
             gestore[posizione]=gestore[posizione+1];
         }
-
         return gestore;
     }
     private static boolean ricerca (Contatto[] gestore, Contatto contatto, int contrattiVenduti){
@@ -203,5 +223,80 @@ public class Main {
         }
 
     }
+    private static  int[] Compare(Contatto [] gestore, int contrattiVenduti) {
+        int[] compare = new int[contrattiVenduti];
+        boolean controllo=false;
+        //ci sono due cicli for che iniziano entrambi da zero
+            for (int i = 0; i < contrattiVenduti && !controllo; i++) {
+                for (int k = 0; k < contrattiVenduti; k++) {
+                    //fa il compare tra la prima cifra e tutte le altre
+                    compare[k]=gestore[i].cognome.compareTo(gestore[k].cognome);
+                    //se k è uguale ai contratti venduti il controllo diventa true e si esce dal ciclo
+                    if (k==contrattiVenduti-1){
+                        controllo=true;
+                    }
+                }
+            }
+        return compare;
+    }
+
+
+    //controlla se c'è qualche cognome uguale
+private static int uguale(int maggiore,int[] compare){
+        for (int i=0;i<compare.length;i++){
+            if (compare[maggiore]==compare[i] && maggiore!=i){
+                return i;
+            }
+        }
+        return -300;
+}
+
+
+//fa l'ordinamento dell'array
+    private static Contatto[] Cambio(Contatto[] gestore, int contrattivenduti,int[] compare){
+        int maggiore=0;
+        int volte=0;
+        int nome=0;
+        Contatto[] gestoreOrdinato=new Contatto[contrattivenduti];
+        do {
+
+        //trova il numero maggiore
+        for (int i=0;i< compare.length;i++) {
+            if (compare[i] != -35) {
+                //attribuisce la cifra solo la prima volta
+                if (i == 0) {
+                    maggiore = i;
+
+                    //entra quando trova la cifra maggiore
+                } else if (compare[i] > compare[maggiore]) {
+                    maggiore = i;
+                }
+            }
+        }
+
+        if (uguale(maggiore,compare)!=-300){
+                nome=gestore[maggiore].nome.compareTo(gestore[uguale(maggiore,compare)].nome);
+                if (nome>0){
+                    maggiore=uguale(maggiore,compare);
+                }
+        }
+
+            //mette la posizione maggiore dentro un array
+            gestoreOrdinato[volte]=gestore[maggiore];
+
+            //aumentano le posizione dell'array
+            volte++;
+
+            //cambia il numero maggiore con un numero negativo
+            compare[maggiore]=-35;
+
+           //fa ripetere il ciclo
+        }while (volte<contrattivenduti);
+
+        //ritorna il ciclo ordinato
+        return gestoreOrdinato;
+    }
+
+
 
 }
