@@ -16,7 +16,9 @@ public class Main {
                 "[6] Eliminazione del contatto tramite nome e cognome",
                 "[7] Eliminazione del contatto tramite numero",
                 "[8] Ordinamento",
-                "[9] Esci"};
+                "[9] Ricarica telefono",
+                "[10] Telefona",
+                "[11] Esci"};
        boolean Sitel=true;
         String[] tipoC = {"Telefono","1]abitazione", "2]cellulare", "3]aziendale"};
        int posizione=0;
@@ -131,6 +133,27 @@ public class Main {
                     System.out.println(gestore[1].cognome);
                     break;
                 }
+                case 9:{
+                    posizione=Posizione(gestore,leggiPersona(false, keyboard), contrattiVenduti);
+                    if(posizione!=-1){
+                        System.out.println("Insericsi il saldo da inserire");
+                        gestore[posizione].saldo=keyboard.nextInt();
+                        keyboard.nextLine();
+                    }else{
+                        System.out.println("Il contatto non esiste");
+                    }
+                    break;
+                }
+
+                case 10:{
+                    posizione=Posizione(gestore,leggiPersona(false, keyboard), contrattiVenduti);
+                    if(posizione!=-1){
+                        gestore[posizione].saldo-=0.50;
+                    }else{
+                        System.out.println("Il contatto non esiste");
+                    }
+                    break;
+                }
 
                 default:
                     fine = false;
@@ -205,6 +228,8 @@ public class Main {
         }
         return gestore;
     }
+
+
     private static boolean ricerca (Contatto[] gestore, Contatto contatto, int contrattiVenduti){
         //Controllo se il nome e il cognome del contatto e ugale al nome e cogome del gestore
         boolean ricerca = false;

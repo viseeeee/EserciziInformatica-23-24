@@ -6,6 +6,7 @@ public class Contatto {
     public String telefono;
     public tipoContratto tipo;
 
+    public float saldo;
     public String stampa()
     {
         return String.format("Nome: %s Cognome: %s Telefono: %s, tipo: %s", nome, cognome, telefono, tipo.toString());
