@@ -4,7 +4,6 @@ public class Club {
     public String nomeClub;
 
     public int partecipanti;
-    public Utente utente;
 
     public String nome;
 
