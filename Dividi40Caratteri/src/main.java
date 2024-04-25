@@ -7,10 +7,13 @@ public class main {
 
         //dividere la stringa al 40esimo carattere finenedo la sua parola
         String frase;
+        System.out.println("Inserisci la frase");
         frase=keyboard.nextLine();
         if (frase.length()<40){
             System.out.println("Hai inserito una frase che ha meno di 40 caratteri");
-        }else {
+        } else if (frase.length()>80) {
+            System.out.println("Hai inserito una frase troppo lunga, deve avere meno di 80 caratteri");
+        } else {
             //40 esimo carattere della stringa
             String fraseQuaranta = "";
 
