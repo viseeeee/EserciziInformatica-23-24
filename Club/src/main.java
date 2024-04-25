@@ -167,7 +167,7 @@ public class main {
     //serve per cercare il primo valore del club
     private static int cercaClub(Club[] club,int PersoneInserite,int posizione){
         for (int i=0;i<PersoneInserite;i++){
-            if (club[posizione].nomeClub==club[i].nomeClub){
+            if (club[posizione].nomeClub.equals(club[i].nomeClub)){
                 return i;
             }
         }
