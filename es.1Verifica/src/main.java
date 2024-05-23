@@ -2,7 +2,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.FileReader;
-import static tools.utility.menu;
+
+import static tools.utility.Wait;
+import static tools.utility.*;
 
 public class main {
     public static void main(String[] args) {
@@ -58,8 +60,11 @@ public class main {
                     if (i!=-1){
                         RubricaTelefonica[utentiTelefono]=RubricaNumeri[i];
                         utentiTelefono++;
+                        System.out.println("L'utente è stato inserito correttamente");
+                        Wait(2000);
                     }else {
                         System.out.println("Non hai inserito questo utente tra i numeri salvati");
+                        Wait(2000);
                     }
                 }
 
@@ -67,8 +72,10 @@ public class main {
                     //controlla l'inserimento della pw
                     if (InserimentoPW(password)){
                         VisualizzaNascosta(RubricaNumeri,personeInserite);
+                        Wait(2000);
                     }else {
                         VisualizzaPubblico(RubricaNumeri,personeInserite);
+                        Wait(2000);
                     }
                 }
 
@@ -76,8 +83,10 @@ public class main {
                     //controlla l'inserimento della pw
                     if (InserimentoPW(password)){
                         VisualizzaNascosta(RubricaTelefonica,utentiTelefono);
+                        Wait(2000);
                     }else {
                         VisualizzaPubblico(RubricaTelefonica,utentiTelefono);
+                        Wait(2000);
                     }
                 }
                 case 5->{
@@ -112,6 +121,7 @@ public class main {
                     keyboard.nextLine();
                     System.out.println("Inserisci la password");
                     password=keyboard.nextLine();
+                    Wait(2000);
                 }
 
                 case 8->{
@@ -291,6 +301,5 @@ public class main {
         }
         return -1;
     }
-
 }
 
